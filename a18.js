@@ -36,11 +36,8 @@ async function sendData(textString) {
 }
 
 
-setTimeout(() => {
-    console.log("⏳ Delayed check for submit button...");
-    const submitButton = document.querySelector("input[type='submit']");
-    console.log("🔍 Found submit button (after delay):", submitButton);
-}, 1000); // Waits 3 seconds before checking again
+const submitbutton = document.querySelector("input[type='submit']");
+console.log("🔍 Found submit button (after delay):", submitbutton);
 
 
 
