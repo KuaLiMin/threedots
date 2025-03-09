@@ -36,35 +36,40 @@ async function sendData(textString) {
 }
 
 
-const submitbutton = document.querySelector("input[type='submit']");
-console.log("🔍 Found submit button (after delay):", submitbutton);
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("domcontloaded........")
-    /* Add event listener to the submit button */
+
+console.log("🚀 Checking document.readyState:", document.readyState);
+
+if (document.readyState === "complete" || document.readyState === "interactive") {
+    console.log("✅ DOM was already loaded, running event listener setup now!");
+    setupSubmitButton();
+} else {
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log("✅ DOMContentLoaded event fired!");
+        setupSubmitButton();
+    });
+}
+
+// Function to attach event listener
+function setupSubmitButton() {
     const submitButton = document.querySelector("input[type='submit']");
+    console.log("🔍 Found submit button:", submitButton);
+
     if (submitButton) {
         submitButton.addEventListener("click", function() {
-            console.log('Submit button clicked');
-
-            /* Get all input fields */
-            const inputFields = document.querySelectorAll("input");
-
-            /* Concatenate all input data into a single string */
-            let inputData = "";
-            inputFields.forEach(field => {
-                inputData += field.value + " ";
-            });
-
-            /* Send the concatenated input data to Firebase */
-            sendData(inputData.trim());
+            console.log("✅ Submit button clicked!");
         });
     } else {
-        console.error("Submit button not found in the DOM.");
+        console.error("❌ Submit button not found.");
     }
-});
+}
+
+
+
+
+
 
 
 sendData("double    test")
