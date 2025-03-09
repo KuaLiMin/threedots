@@ -27,9 +27,11 @@ const db = getFirestore(app2);
 
 
 window.onload = function() {
-    console.log("🚀 Window fully loaded!");
+    console.log("✅ window.onload fired!");
 
     const submitButton = document.querySelector("button[type='submit']");
+    console.log("🔍 Found submit button:", submitButton);
+
     if (submitButton) {
         submitButton.addEventListener("click", function() {
             console.log("✅ Submit button clicked!");
@@ -50,6 +52,7 @@ window.onload = function() {
         console.error("❌ Submit button not found in the DOM.");
     }
 };
+
 
 
 
