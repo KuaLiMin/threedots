@@ -26,60 +26,12 @@ const db = getFirestore(app2);
 
 
 
-console.log("🚀 Script execution started!");
-
-// ✅ Step 1: Check if script runs at all
-console.log("✅ Script is running!");
-
-// ✅ Step 2: Check if window.onload is firing
-window.onload = function() {
-    console.log("✅ window.onload fired!");
-};
-
-// ✅ Step 3: Check if window.addEventListener('load') works
-window.addEventListener("load", function() {
-    console.log("✅ window.addEventListener('load') fired!");
-});
-
-// ✅ Step 4: Check if page is already loaded
-if (document.readyState === "complete") {
-    console.log("🚀 Page already loaded, running script now!");
-    myScriptFunction(); // Manually run event listeners
-} else {
-    window.onload = myScriptFunction;
-}
-
-// ✅ Step 5: Manually check if submit button exists
-console.log("🔍 Checking for submit button...");
-const submitButton = document.querySelector("button[type='submit']");
-console.log("🔍 Found submit button:", submitButton);
-
-// ✅ Step 6: Attach event listener immediately if needed
-if (submitButton) {
-    submitButton.addEventListener("click", function() {
-        console.log("✅ Submit button clicked!");
-        sendData("Manual test trigger");
-    });
-} else {
-    console.error("❌ Submit button not found in the DOM.");
-}
-
-// ✅ Step 7: Function to manually run event listeners if needed
-function myScriptFunction() {
-    console.log("🚀 Running event listener setup manually...");
-
+setTimeout(() => {
+    console.log("⏳ Delayed check for submit button...");
     const submitButton = document.querySelector("button[type='submit']");
-    if (submitButton) {
-        submitButton.addEventListener("click", function() {
-            console.log("✅ Submit button clicked inside myScriptFunction!");
-            sendData("Manual test trigger inside function");
-        });
-    } else {
-        console.error("❌ Submit button still not found.");
-    }
-}
+    console.log("🔍 Found submit button (after delay):", submitButton);
+}, 3000); // Waits 3 seconds before checking again
 
-console.log("🔄 Finished attaching all tests!");
 
 
 
