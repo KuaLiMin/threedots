@@ -36,10 +36,7 @@ async function sendData(textString) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const submitButton = document.querySelector("input[type='submit']");
-    if (submitButton) {
-        console.log("✅ Submit button found (setInterval)!");
-    }
+    console.log("domcontloaded........")
     /* Add event listener to the submit button */
     const submitButton = document.querySelector("input[type='submit']");
     if (submitButton) {
