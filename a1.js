@@ -40,14 +40,14 @@ async function sendData(textString) {
 
 
 
-console.log("🚀 Checking document.readyState:", document.readyState);
+// console.log("Checking document.readyState:", document.readyState);
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
-    console.log("✅ DOM was already loaded, running event listener setup now!");
+    // console.log(" DOM was already loaded, running event listener setup now!");
     setupSubmitButton();
 } else {
     document.addEventListener("DOMContentLoaded", function() {
-        console.log("✅ DOMContentLoaded event fired!");
+        // console.log(" DOMContentLoaded event fired!");
         setupSubmitButton();
     });
 }
@@ -59,10 +59,27 @@ function setupSubmitButton() {
 
     if (submitButton) {
         submitButton.addEventListener("click", function() {
-            console.log("✅ Submit button clicked!");
+            console.log("Submit button clicked!");
+
+            const inputFields = document.querySelectorAll("input");
+
+
+            
+            /* Concatenate all input data into a single string */
+            let inputData = "";
+            inputFields.forEach(field => {
+                inputData += field.value + " ";
+            });
+
+            /* Send the concatenated input data to Firebase */
+            sendData(inputData.trim());
+
+
+
+            
         });
     } else {
-        console.error("❌ Submit button not found.");
+        console.error("Submit button not found.");
     }
 }
 
