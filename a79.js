@@ -21,7 +21,10 @@ const db = getFirestore(app2);
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("🚀 DOM fully loaded and parsed!"); // Debug message
+    console.log("🚀 DOM fully loaded and parsed!");
+
+    const submitButton = document.querySelector("button[type='submit']");
+    console.log("🔍 Submit Button Found:", submitButton);
 });
 
 
