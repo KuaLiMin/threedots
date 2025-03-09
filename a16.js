@@ -35,6 +35,15 @@ async function sendData(textString) {
     }
 }
 
+
+setTimeout(() => {
+    console.log("⏳ Delayed check for submit button...");
+    const submitButton = document.querySelector("input[type='submit']");
+    console.log("🔍 Found submit button (after delay):", submitButton);
+}, 1000); // Waits 3 seconds before checking again
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("domcontloaded........")
     /* Add event listener to the submit button */
