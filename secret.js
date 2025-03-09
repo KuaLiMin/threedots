@@ -1,4 +1,4 @@
-<script type="module">
+
 
 alert('Script loaded successfully!');
 /* Import Firebase SDKs */
@@ -58,4 +58,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 console.log('Firebase loaded');
-</script>
+
