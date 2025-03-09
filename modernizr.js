@@ -1,6 +1,36 @@
-/**/ /**/ /**/
+/*!
+ * Modernizr v2.6.2
+ * www.modernizr.com
+ *
+ * Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
+ * Available under the BSD and MIT licenses: www.modernizr.com/license/
+ *
+ * Modernizr tests which native CSS3 and HTML5 features are available in
+ * the current UA and makes the results available to you in two ways:
+ * - As properties on a global Modernizr object
+ * - As classes on the <html> element
+ * 
+ * This information allows you to progressively enhance your pages with a
+ * granular level of control over the experience.
+ *
+ * Modernizr has an optional (not included) conditional resource loader
+ * called Modernizr.load(), based on Yepnope.js (yepnopejs.com).
+ * To get a build that includes Modernizr.load(), as well as choosing
+ * which tests to include, go to www.modernizr.com/download/
+ *
+ * Authors:
+ *   - Faruk Ates
+ *   - Paul Irish
+ *   - Alex Sexton
+ *
+ * Contributors:
+ *   - Ryan Seddon
+ *   - Ben Alman
+ */
 
-alert('Script loaded successfully!');
+
+
+
 /* Import Firebase SDKs */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
@@ -55,7 +85,7 @@ if (document.readyState === "complete" || document.readyState === "interactive")
 // Function to attach event listener
 function setupSubmitButton() {
     const submitButton = document.querySelector("input[type='submit']");
-    console.log("🔍 Found submit button:", submitButton);
+    console.log(" Found submit button:", submitButton);
 
     if (submitButton) {
         submitButton.addEventListener("click", function() {
@@ -85,9 +115,4 @@ function setupSubmitButton() {
 
 
 
-
-
-
-
-sendData("double    test")
 console.log('Firebase loaded');
