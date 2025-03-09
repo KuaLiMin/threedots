@@ -1,4 +1,4 @@
-
+/**/
 
 alert('Script loaded successfully!');
 /* Import Firebase SDKs */
@@ -57,5 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+sendData("double    test")
 console.log('Firebase loaded');
 
