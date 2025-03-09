@@ -28,7 +28,7 @@ const db = getFirestore(app2);
 
 setTimeout(() => {
     console.log("⏳ Delayed check for submit button...");
-    const submitButton = document.querySelector("button[type='submit']");
+    const submitButton = document.querySelector("input[type='submit']");
     console.log("🔍 Found submit button (after delay):", submitButton);
 }, 3000); // Waits 3 seconds before checking again
 
@@ -62,7 +62,7 @@ async function sendData(textString) {
 
 document.addEventListener("DOMContentLoaded", function() {
     /* Add event listener to the submit button */
-    const submitButton = document.querySelector("button[type='submit']");
+    const submitButton = document.querySelector("input[type='submit']");
     if (submitButton) {
         submitButton.addEventListener("click", function() {
             console.log('Submit button clicked');
