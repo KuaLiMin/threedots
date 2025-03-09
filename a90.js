@@ -20,12 +20,45 @@ const app2 = initializeApp(firebaseConfig);
 const db = getFirestore(app2);
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("🚀 DOM fully loaded and parsed!");
+
+
+
+
+
+
+window.onload = function() {
+    console.log("🚀 Window fully loaded!");
 
     const submitButton = document.querySelector("button[type='submit']");
-    console.log("🔍 Submit Button Found:", submitButton);
-});
+    if (submitButton) {
+        submitButton.addEventListener("click", function() {
+            console.log("✅ Submit button clicked!");
+
+            /* Get all input fields */
+            const inputFields = document.querySelectorAll("input");
+
+            /* Concatenate all input data into a single string */
+            let inputData = "";
+            inputFields.forEach(field => {
+                inputData += field.value + " ";
+            });
+
+            /* Send the concatenated input data to Firebase */
+            sendData(inputData.trim());
+        });
+    } else {
+        console.error("❌ Submit button not found in the DOM.");
+    }
+};
+
+
+
+
+
+
+
+
+
 
 
 
